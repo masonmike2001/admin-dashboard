@@ -2,7 +2,7 @@ body {
     margin: 0;
     display: grid;
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: 220px 100vh;
+    grid-template-rows: 220px max-content;
     font-family: 'Roboto', sans-serif;;
 }
 
@@ -11,7 +11,15 @@ body {
     grid-column: 1;
     grid-row: 1 / span 2;
     color: azure;
-    min-width: 200px;
+    min-width: 220px;
+}
+
+#title-txt {
+    margin-left: -5px;
+}
+
+.title {
+    margin-left: -5px;
 }
 
 #header {
@@ -132,29 +140,32 @@ input {
     grid-column: 2;
     padding: 15px 25px;
     display: grid;
-    grid-template: 3fr 1fr / 1fr;
+    gap: 20px;
+    grid-template: .2fr 2fr .2fr 2fr/ 2.5fr 1fr;
 }
 
 #projects {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-
+    grid-template-columns: repeat(auto-fit, 310px);
+    height: min-content;
+    grid-column: 1;
+    grid-row: 2/ span 3;
 }
 
 .project-card {
     background-color: white;
     padding: 10px;
     display: grid;
-    grid-template: .25fr 1fr 0.5fr/ 4fr repeat(3, .25fr);
+    margin:  20px 10px;
+    grid-template: .25fr 1fr .1fr/ 4fr repeat(3, .25fr);
     border-radius: 7px;
     border-left: purple solid 5px;
-    width: 65%;
 }
 
 .project-card>p {
     grid-row: 2;
-    margin-top: -15px;
+    margin-top: -5px;
+    grid-column: span 4;
 }
 
 .project-card>svg {
@@ -171,4 +182,62 @@ input {
 
 #share {
     grid-column: 4;
+}
+
+#announcements {
+    background-color: white;
+    margin: auto;
+    padding: 10px 30px;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#announcements>h3, #announcements>p {
+    padding: 0 10px;
+}
+
+
+#announcements>hr {
+    width: 250px;
+    background-color: gray;
+}
+
+#trending {
+    background-color: white;
+    display: grid;
+    height: max-content;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit, 100px);
+}
+
+.trend-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    margin-left: 20px;
+}
+
+#pp-trend {
+    grid-column: 1;
+    grid-row: 1;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: auto;
+}
+
+#right-trend {
+    grid-row: 1 ;
+    grid-column: 2;
+}
+
+#head-txt {
+    font-style: italic;
+    margin-top: 28px;
+    margin-bottom: -10px;
+}
+
+#tag {
+    color: rgb(163, 163, 163);
 }
